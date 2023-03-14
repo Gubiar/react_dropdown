@@ -6,9 +6,8 @@ export default function Home() {
     const { selected, setSelected } = useContext(DropdownContext);
 
     const items = [
-        { value: 1, label: "Item 1" },
-        { value: 2, label: "Item 2" },
-        { value: 3, label: "Item 3" },
+        { value: "portugues", label: "Português", sigla: 'pt-BR' },
+        { value: "espanhol", label: "Español" , sigla: 'es-PY'},
     ];
 
     return (

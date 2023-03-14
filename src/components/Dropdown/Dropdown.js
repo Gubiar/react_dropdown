@@ -1,4 +1,5 @@
 import { DropdownContext } from "@/context/DropdownContext";
+import Image from "next/image";
 import React, { useState, useContext, useEffect, useRef } from "react";
 import styles from "./Dropdown.module.css";
 
@@ -42,6 +43,7 @@ export default function Dropdown({ items }) {
     const handleItemClick = (item) => {
         setSelected(item);
         setSelectedItem(item);
+        setIsOpen(false);
     };
 
     return (
@@ -50,7 +52,13 @@ export default function Dropdown({ items }) {
                 className={styles.dropdown_toggle}
                 onClick={() => handleDropdownClick(this)}
             >
-                {selectedItem.label}
+                <Image
+                    src='/icn_tradutor.svg'
+                    alt="Icone de globo para seleção de idioma"
+                    fill={true}
+                    quality={100}
+                />
+                <span>{selectedItem.sigla}</span>
             </button>
             {isOpen ? (
                 <ul className={styles.dropdown_menu}>
@@ -59,7 +67,7 @@ export default function Dropdown({ items }) {
                             key={item.value}
                             onClick={() => handleItemClick(item)}
                         >
-                            {item.label}
+                            {`${item.sigla} - ${item.label}`}
                         </li>
                     ))}
                 </ul>

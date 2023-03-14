@@ -53,12 +53,19 @@ export default function Dropdown({ items }) {
                 onClick={() => handleDropdownClick(this)}
             >
                 <Image
-                    src='/icn_tradutor.svg'
+                    src="/globe.svg"
                     alt="Icone de globo para seleção de idioma"
                     fill={true}
                     quality={100}
                 />
                 <span>{selectedItem.sigla}</span>
+                <Image
+                    className={isOpen ? null : styles.arrow_down}
+                    src="/arrow.svg"
+                    alt="Arrow up down"
+                    fill={true}
+                    quality={100}
+                />
             </button>
             {isOpen ? (
                 <ul className={styles.dropdown_menu}>

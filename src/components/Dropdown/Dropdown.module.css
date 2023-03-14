@@ -17,10 +17,22 @@
 
 .dropdown_toggle img {
     width: auto !important;
-    height: 30px !important;
-    margin-right: 1rem;
+    height: 20px !important;
+    margin-right: 0.5rem;
     object-fit: contain !important;
     position: inherit !important;
+}
+
+.dropdown_toggle img:last-child{
+    height: 7px !important;
+    margin-right: 0px !important;
+    margin-left: 1.5rem !important;
+
+    transition: all 0.2s ease-in-out;
+}
+
+.arrow_down {
+    transform: scaleY(-1);
 }
 
 .dropdown_menu {
